@@ -10,3 +10,7 @@ fastapi
 uvicorn
 pytest
 ruff
+pyyaml
+xgboost
+nbformat
+mlflow
