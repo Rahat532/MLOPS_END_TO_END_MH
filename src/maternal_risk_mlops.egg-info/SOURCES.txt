@@ -11,6 +11,7 @@ src/maternal_risk/evaluation/plots.py
 src/maternal_risk/features/__init__.py
 src/maternal_risk/features/build_features.py
 src/maternal_risk/models/__init__.py
+src/maternal_risk/models/compare.py
 src/maternal_risk/models/registry.py
 src/maternal_risk/models/train.py
 src/maternal_risk_mlops.egg-info/PKG-INFO
