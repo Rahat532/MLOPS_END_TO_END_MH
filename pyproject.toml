@@ -1,0 +1,10 @@
+[project]
+name = "maternal-risk-mlops"
+version = "0.1.0"
+requires-python = ">=3.9"
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+
+[tool.ruff]
+line-length = 100
