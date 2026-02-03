@@ -3,6 +3,11 @@
 <p align="center">
   <img src="webapp/assets/img/logo.svg" alt="Maternal Health AI Logo" width="80" height="80">
 </p>
+---
+title: Maternal Risk Prediction API
+sdk: docker
+app_port: 7860
+---
 
 End-to-end ML + MLOps project to predict maternal health risk level (Low/Mid/High) from basic vital signs. Includes a full-featured web application for risk assessment, educational resources, and medication safety information.
 

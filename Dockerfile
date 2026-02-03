@@ -7,7 +7,7 @@ WORKDIR /app
 # Set environment variables
 ENV PYTHONDONTWRITEBYTECODE=1
 ENV PYTHONUNBUFFERED=1
-ENV PORT=8000
+ENV PORT=10000
 
 # Install system dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -27,13 +27,12 @@ COPY . .
 # Create static directory if it doesn't exist
 RUN mkdir -p webapp/static
 
-# Expose port
-EXPOSE $PORT
+# Preload the model during build to speed up startup
+RUN python -c "from webapp.model import get_model; get_model(); print('Model loaded successfully')"
 
-# Health check
-HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
-    CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:${PORT}/')" || exit 1
+# Expose port (Render uses 10000 by default)
+EXPOSE 10000
 
 # Run the application
 # Render sets PORT env variable, uvicorn will use it
-CMD uvicorn webapp.main:app --host 0.0.0.0 --port $PORT
+CMD ["sh", "-c", "uvicorn webapp.main:app --host 0.0.0.0 --port ${PORT:-10000}"]

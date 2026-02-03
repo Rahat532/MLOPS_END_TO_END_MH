@@ -6,7 +6,7 @@ from fastapi.templating import Jinja2Templates
 from pydantic import ValidationError
 
 from webapp.schemas import PredictRequest
-from webapp.model import predict_risk
+from webapp.model import predict_risk, get_model
 
 app = FastAPI(title="Maternal Risk Predictor")
 
@@ -15,6 +15,14 @@ if os.path.isdir("webapp/static"):
     app.mount("/static", StaticFiles(directory="webapp/static"), name="static")
 app.mount("/assets", StaticFiles(directory="webapp/assets"), name="assets")
 templates = Jinja2Templates(directory="webapp")
+
+
+# Preload model on startup for faster first request
+@app.on_event("startup")
+async def startup_event():
+    """Load model into memory on startup to avoid cold start delays."""
+    get_model()
+    print("Model loaded and ready!")
 
 
 @app.get("/", response_class=HTMLResponse)

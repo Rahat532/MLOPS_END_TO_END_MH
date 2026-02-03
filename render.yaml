@@ -12,3 +12,5 @@ services:
         value: "3.12"
       - key: MODEL_PATH
         value: "models/rf.joblib"
+      - key: PORT
+        value: "10000"
