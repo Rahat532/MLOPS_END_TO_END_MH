@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Mental Health Check</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+    <header class="nav">
+        <div class="container nav-inner">
+            <a class="brand" href="index.html"><span class="brand-badge"></span><span>Your Mental Health</span></a>
+            <nav class="nav-links">
+                <a href="resources.html">Resources</a>
+                <a href="articles.html">Articles</a>
+                <a href="blog.html">Blog</a>
+                <a class="nav-cta" href="check.html">Start Check</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <h2>Mental Health Check</h2>
+            <p class="sub">
+                This is a quick screening tool. It’s not a diagnosis — it helps you understand patterns and next steps.
+            </p>
+
+            <div class="grid-3">
+                <!-- LEFT: Form -->
+                <section class="card" style="grid-column: span 2;">
+                    <div
+                        style="display:flex; justify-content:space-between; gap:12px; align-items:center; flex-wrap:wrap;">
+                        <span class="pill" id="stepPill">Step 1 of 2</span>
+                        <span class="pill">Private • No sign-up</span>
+                    </div>
+
+                    <!-- Step 1 -->
+                    <div id="step1" style="margin-top:14px">
+                        <h3 style="margin: 10px 0 8px;">How have you been feeling recently?</h3>
+
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:12px;">
+                            <label>
+                                <div class="pill">Stress level (0–10)</div>
+                                <input class="input" type="number" min="0" max="10" value="5" id="stress" />
+                            </label>
+                            <label>
+                                <div class="pill">Sleep hours (0–12)</div>
+                                <input class="input" type="number" min="0" max="12" value="7" id="sleep" />
+                            </label>
+                            <label>
+                                <div class="pill">Anxiety (0–10)</div>
+                                <input class="input" type="number" min="0" max="10" value="4" id="anxiety" />
+                            </label>
+                            <label>
+                                <div class="pill">Mood (0–10)</div>
+                                <input class="input" type="number" min="0" max="10" value="6" id="mood" />
+                            </label>
+                        </div>
+
+                        <div style="margin-top:12px;">
+                            <div class="pill">Any of these apply?</div>
+                            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+                                <label class="tag"><input type="checkbox" id="panic" /> Panic attacks</label>
+                                <label class="tag"><input type="checkbox" id="burnout" /> Burnout</label>
+                                <label class="tag"><input type="checkbox" id="isolation" /> Social withdrawal</label>
+                                <label class="tag"><input type="checkbox" id="appetite" /> Appetite change</label>
+                            </div>
+                        </div>
+
+                        <div class="hero-actions" style="margin-top:16px;">
+                            <button class="btn btn-primary" id="toStep2">Continue →</button>
+                            <a class="btn" href="resources.html">Need resources?</a>
+                        </div>
+                    </div>
+
+                    <!-- Step 2 -->
+                    <div id="step2" style="margin-top:14px; display:none;">
+                        <h3 style="margin: 10px 0 8px;">A bit more context</h3>
+
+                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:12px;">
+                            <label>
+                                <div class="pill">Age</div>
+                                <input class="input" type="number" min="10" max="100" value="22" id="age" />
+                            </label>
+                            <label>
+                                <div class="pill">Daily screen time (hours)</div>
+                                <input class="input" type="number" min="0" max="18" value="6" id="screen" />
+                            </label>
+                        </div>
+
+                        <label style="display:block; margin-top:12px;">
+                            <div class="pill">Main concern (optional)</div>
+                            <input class="input" type="text" id="concern"
+                                placeholder="e.g., racing thoughts, low energy, stress" />
+                        </label>
+
+                        <div class="hero-actions" style="margin-top:16px;">
+                            <button class="btn" id="backTo1">← Back</button>
+                            <button class="btn btn-primary" id="getResult">Get Summary</button>
+                        </div>
+
+                        <div class="small">If you feel unsafe or in danger, go to the Resources page for emergency
+                            options.</div>
+                    </div>
+                </section>
+
+                <!-- RIGHT: Results -->
+                <aside class="card">
+                    <span class="pill">Your Summary</span>
+                    <h3 style="margin: 10px 0 6px;" id="resultTitle">Complete the check</h3>
+                    <p id="resultText" style="color: var(--muted); margin: 0 0 12px;">
+                        Answer the questions on the left to see a helpful summary and suggestions.
+                    </p>
+
+                    <div id="resultBox" class="metric" style="display:none;">
+                        <div class="val" id="level">—</div>
+                        <div class="lbl" id="note">—</div>
+                    </div>
+
+                    <div style="margin-top:14px;">
+                        <div class="pill">Next steps</div>
+                        <ul style="margin: 10px 0 0; padding-left: 18px; color: var(--muted);">
+                            <li id="stepA">—</li>
+                            <li id="stepB">—</li>
+                            <li id="stepC">—</li>
+                        </ul>
+                    </div>
+
+                    <div style="margin-top:16px;">
+                        <a class="btn" href="articles.html">Read helpful articles →</a>
+                    </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>

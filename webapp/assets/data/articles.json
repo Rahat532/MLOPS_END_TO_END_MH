@@ -1,0 +1,20 @@
+[
+    {
+        "title": "How stress affects your body and mind",
+        "excerpt": "A simple explanation of stress signals and what you can do today.",
+        "tag": "Stress",
+        "url": "articles.html"
+    },
+    {
+        "title": "Better sleep: small habits that actually work",
+        "excerpt": "Wind-down routines, caffeine timing, and screen habits.",
+        "tag": "Sleep",
+        "url": "articles.html"
+    },
+    {
+        "title": "Anxiety basics: what it is and why it happens",
+        "excerpt": "Understand the pattern and learn calming techniques.",
+        "tag": "Anxiety",
+        "url": "articles.html"
+    }
+]

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Your Mental Health</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+</head>
+
+<body>
+    <!-- NAV -->
+    <header class="nav">
+        <div class="container nav-inner">
+            <a class="brand" href="index.html">
+                <span class="brand-badge"></span>
+                <span>Your Mental Health</span>
+            </a>
+            <nav class="nav-links">
+                <a href="resources.html">Resources</a>
+                <a href="articles.html">Articles</a>
+                <a href="blog.html">Blog</a>
+                <a href="medication.html">Medication</a>
+                <a class="nav-cta" href="check.html">Start Check</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <main class="hero">
+        <div class="container hero-grid">
+            <section>
+                <div class="kicker">🧠 Mental Health Check • Guidance • Support</div>
+                <h1 class="h1">Understand how you feel — and find support that fits.</h1>
+                <p class="lead">
+                    A clean, private mental health check with helpful resources, articles, and next steps.
+                    This is not a diagnosis — it’s a starting point.
+                </p>
+                <div class="hero-actions">
+                    <a class="btn btn-primary" href="check.html">Start Mental Health Check →</a>
+                    <a class="btn" href="resources.html">Explore Resources</a>
+                </div>
+                <div class="small">If you’re in immediate danger, call local emergency services.</div>
+            </section>
+
+            <aside class="hero-card">
+                <h3>Quick overview</h3>
+                <p>Fast check + practical guidance and reading materials.</p>
+                <div class="hero-metrics">
+                    <div class="metric">
+                        <div class="val">2–3 min</div>
+                        <div class="lbl">Check time</div>
+                    </div>
+                    <div class="metric">
+                        <div class="val" id="articleCount">—</div>
+                        <div class="lbl">Articles</div>
+                    </div>
+                    <div class="metric">
+                        <div class="val" id="blogCount">—</div>
+                        <div class="lbl">Blog posts</div>
+                    </div>
+                    <div class="metric">
+                        <div class="val">Private</div>
+                        <div class="lbl">No sign-up</div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </main>
+
+    <section class="section">
+        <div class="container">
+            <h2>What you can do here</h2>
+            <p class="sub">A modern, friendly experience — not a hospital-looking website.</p>
+
+            <div class="grid-3">
+                <a class="card" href="check.html">
+                    <span class="pill">Mental Health Check</span>
+                    <h3>Check your current state</h3>
+                    <p>Answer a few questions and get a helpful summary and next steps.</p>
+                </a>
+                <a class="card" href="articles.html">
+                    <span class="pill">Articles</span>
+                    <h3>Learn what’s happening</h3>
+                    <p>Understand stress, anxiety, sleep, burnout — with practical guidance.</p>
+                </a>
+                <a class="card" href="resources.html">
+                    <span class="pill">Support</span>
+                    <h3>Find support options</h3>
+                    <p>Suggestions, resources, and ways to talk to someone when needed.</p>
+                </a>
+            </div>
+
+            <hr class="sep" />
+
+            <div class="section" style="padding-top:0">
+                <h2>Featured reads</h2>
+                <p class="sub">Fresh content, displayed dynamically from JSON (no React needed).</p>
+
+                <div class="grid-3" id="featuredArticles"></div>
+
+                <div style="margin-top:16px">
+                    <a class="btn" href="articles.html">Browse all articles →</a>
+                </div>
+            </div>
+
+            <hr class="sep" />
+
+            <div class="section" style="padding-top:0">
+                <h2>Latest blog posts</h2>
+                <p class="sub">Personal stories, tips, and mental wellness practices.</p>
+                <div class="grid-3" id="latestBlogs"></div>
+                <div style="margin-top:16px">
+                    <a class="btn" href="blog.html">Read the blog →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="brand"><span class="brand-badge"></span><span>Your Mental Health</span></div>
+                    <p>Guidance, resources, and a simple mental health check — designed to feel calm and modern.</p>
+                </div>
+                <div>
+                    <h3 style="margin:0 0 10px">Quick links</h3>
+                    <p><a href="check.html">Mental Health Check</a></p>
+                    <p><a href="articles.html">Articles</a></p>
+                    <p><a href="blog.html">Blog</a></p>
+                </div>
+                <div>
+                    <h3 style="margin:0 0 10px">Contact</h3>
+                    <p><a href="contact.html">contact@yourcompany.com</a></p>
+                    <p><a href="resources.html">Crisis resources</a></p>
+                </div>
+            </div>
+
+            <div class="footbar">
+                <span>© 2026 YourCompanyName. All rights reserved.</span>
+                <span>Not medical advice.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/content.js"></script>
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
