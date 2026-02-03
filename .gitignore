@@ -11,11 +11,11 @@ build/
 # Jupyter
 .ipynb_checkpoints/
 
-# Data & Models
+# Data (keep models for deployment)
 data/raw/
 data/processed/
-models/*.joblib
-models/*.pkl
+# models/*.joblib  # Commented out - models needed for deployment
+# models/*.pkl
 
 # Reports
 reports/figures/

@@ -27,9 +27,6 @@ COPY . .
 # Create static directory if it doesn't exist
 RUN mkdir -p webapp/static
 
-# Preload the model during build to speed up startup
-RUN python -c "from webapp.model import get_model; get_model(); print('Model loaded successfully')"
-
 # Expose port (Render uses 10000 by default)
 EXPOSE 10000
 
