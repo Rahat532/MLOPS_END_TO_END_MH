@@ -188,7 +188,42 @@ output:
   report_dir: reports
 ```
 
-## 🛡️ Disclaimer
+## � Docker Deployment
+
+### Build and Run Locally
+
+```bash
+# Build the Docker image
+docker build -t maternal-health-ai .
+
+# Run the container
+docker run -p 8000:8000 maternal-health-ai
+```
+
+Open http://localhost:8000 in your browser.
+
+### Deploy to Render
+
+1. Push your code to GitHub
+2. Go to [Render Dashboard](https://dashboard.render.com/)
+3. Click **New** → **Web Service**
+4. Connect your GitHub repository
+5. Render will auto-detect the `Dockerfile` and `render.yaml`
+6. Click **Create Web Service**
+
+Or use the Render Blueprint:
+- Click **New** → **Blueprint**
+- Select your repository
+- Render will use `render.yaml` for configuration
+
+### Environment Variables
+
+| Variable | Default | Description |
+|----------|---------|-------------|
+| `PORT` | `8000` | Server port (set by Render automatically) |
+| `MODEL_PATH` | `models/rf.joblib` | Path to trained model |
+
+## �🛡️ Disclaimer
 
 This tool is for educational purposes only and should not replace professional medical advice. Always consult with qualified healthcare providers for medical decisions.
 
