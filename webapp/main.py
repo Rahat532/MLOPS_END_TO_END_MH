@@ -1,3 +1,4 @@
+import os
 from fastapi import FastAPI, Request, Form
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
@@ -9,7 +10,9 @@ from webapp.model import predict_risk
 
 app = FastAPI(title="Maternal Risk Predictor")
 
-app.mount("/static", StaticFiles(directory="webapp/static"), name="static")
+# Mount static directories (only if they exist)
+if os.path.isdir("webapp/static"):
+    app.mount("/static", StaticFiles(directory="webapp/static"), name="static")
 app.mount("/assets", StaticFiles(directory="webapp/assets"), name="assets")
 templates = Jinja2Templates(directory="webapp")
 

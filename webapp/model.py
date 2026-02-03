@@ -1,11 +1,22 @@
 import os
 import joblib
-import numpy as np
+import pandas as pd
 
 # Default to Random Forest (best performing model)
 MODEL_PATH = os.getenv("MODEL_PATH", "models/rf.joblib")
 
 _model = None
+
+# Feature names must match the order used during training
+FEATURE_NAMES = [
+    "Age",
+    "SystolicBP",
+    "DiastolicBP",
+    "BS",
+    "BodyTemp",
+    "HeartRate",
+    "pulse_pressure",
+]
 
 
 def get_model():
@@ -27,7 +38,8 @@ def predict_risk(features: dict) -> str:
     # Add engineered feature: pulse_pressure
     pulse_pressure = features["SystolicBP"] - features["DiastolicBP"]
 
-    X = np.array(
+    # Create DataFrame with feature names to avoid sklearn warning
+    X = pd.DataFrame(
         [
             [
                 features["Age"],
@@ -38,7 +50,8 @@ def predict_risk(features: dict) -> str:
                 features["HeartRate"],
                 pulse_pressure,
             ]
-        ]
+        ],
+        columns=FEATURE_NAMES,
     )
 
     pred = model.predict(X)[0]
