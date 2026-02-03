@@ -543,23 +543,185 @@ hr.sep {
     color: var(--text);
 }
 
+/* ========== Mobile Menu Toggle ========== */
+.nav-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 1px solid var(--stroke);
+    border-radius: 10px;
+    cursor: pointer;
+    padding: 8px;
+}
+
+.nav-toggle span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background: var(--text);
+    border-radius: 2px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.nav-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.nav-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+}
+
 /* ========== Responsive ========== */
+
+/* Tablet breakpoint */
 @media (max-width: 920px) {
     .hero-grid {
         grid-template-columns: 1fr;
     }
 
     .grid-3 {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr 1fr;
     }
 
     .footer-grid {
         grid-template-columns: 1fr 1fr;
         gap: 24px;
     }
+
+    .toolbar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .input {
+        width: 100%;
+    }
 }
 
+/* Mobile breakpoint */
+@media (max-width: 768px) {
+    :root {
+        --space-6: 32px;
+        --space-7: 48px;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(11, 18, 32, 0.98);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--stroke);
+        padding: 16px 20px;
+        gap: 8px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a {
+        padding: 14px 16px;
+        border-radius: 12px;
+        background: rgba(255, 255, 255, 0.04);
+        text-align: center;
+    }
+
+    .nav-links a:hover {
+        background: rgba(255, 255, 255, 0.08);
+    }
+
+    .nav-cta {
+        order: -1;
+        margin-bottom: 8px;
+    }
+
+    .nav-inner {
+        position: relative;
+    }
+
+    .h1 {
+        font-size: clamp(28px, 6vw, 40px);
+    }
+
+    .lead {
+        font-size: 15px;
+    }
+
+    .hero {
+        padding: var(--space-5) 0;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+    }
+
+    .hero-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .hero-card {
+        padding: var(--space-4);
+    }
+
+    .hero-metrics {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Fix grid-column span on mobile */
+    .card[style*="grid-column: span"] {
+        grid-column: span 1 !important;
+    }
+
+    /* Form responsiveness */
+    .card form [style*="grid-template-columns: 1fr 1fr"] {
+        display: flex !important;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .section h2 {
+        font-size: 24px;
+    }
+
+    .card {
+        padding: 16px;
+    }
+
+    .btn {
+        padding: 14px 18px;
+        font-size: 15px;
+    }
+}
+
+/* Small mobile breakpoint */
 @media (max-width: 600px) {
+    .container {
+        width: calc(100% - 24px);
+    }
+
     .footer-grid {
         grid-template-columns: 1fr;
     }
@@ -571,5 +733,34 @@ hr.sep {
 
     .footbar-links {
         justify-content: center;
+    }
+
+    .hero-metrics {
+        grid-template-columns: 1fr;
+    }
+
+    .metric .val {
+        font-size: 18px;
+    }
+
+    .kicker {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+
+    .pill {
+        font-size: 12px;
+        padding: 5px 8px;
+    }
+
+    .tag-row {
+        overflow-x: auto;
+        flex-wrap: nowrap;
+        padding-bottom: 8px;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .tag {
+        flex-shrink: 0;
     }
 }
