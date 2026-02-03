@@ -10,7 +10,8 @@ from webapp.model import predict_risk
 app = FastAPI(title="Maternal Risk Predictor")
 
 app.mount("/static", StaticFiles(directory="webapp/static"), name="static")
-templates = Jinja2Templates(directory="webapp/templates")
+app.mount("/assets", StaticFiles(directory="webapp/assets"), name="assets")
+templates = Jinja2Templates(directory="webapp")
 
 
 @app.get("/", response_class=HTMLResponse)
@@ -18,6 +19,36 @@ def home(request: Request):
     return templates.TemplateResponse(
         "index.html", {"request": request, "result": None, "error": None}
     )
+
+
+@app.get("/check.html", response_class=HTMLResponse)
+def check(request: Request):
+    return templates.TemplateResponse("check.html", {"request": request})
+
+
+@app.get("/resources.html", response_class=HTMLResponse)
+def resources(request: Request):
+    return templates.TemplateResponse("resources.html", {"request": request})
+
+
+@app.get("/articles.html", response_class=HTMLResponse)
+def articles(request: Request):
+    return templates.TemplateResponse("articles.html", {"request": request})
+
+
+@app.get("/blog.html", response_class=HTMLResponse)
+def blog(request: Request):
+    return templates.TemplateResponse("blog.html", {"request": request})
+
+
+@app.get("/medication.html", response_class=HTMLResponse)
+def medication(request: Request):
+    return templates.TemplateResponse("medication.html", {"request": request})
+
+
+@app.get("/contact.html", response_class=HTMLResponse)
+def contact(request: Request):
+    return templates.TemplateResponse("contact.html", {"request": request})
 
 
 @app.post("/predict", response_class=HTMLResponse)

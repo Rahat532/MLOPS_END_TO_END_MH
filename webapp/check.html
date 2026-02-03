@@ -4,28 +4,29 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <title>Mental Health Check</title>
-    <link rel="stylesheet" href="assets/css/styles.css" />
+    <title>Maternal Health Risk Check</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
 </head>
 
 <body>
     <header class="nav">
         <div class="container nav-inner">
-            <a class="brand" href="index.html"><span class="brand-badge"></span><span>Your Mental Health</span></a>
+            <a class="brand" href="/"><img src="/assets/img/logo.svg" alt="Maternal Health AI" class="brand-logo" /><span>Maternal Health</span></a>
             <nav class="nav-links">
-                <a href="resources.html">Resources</a>
-                <a href="articles.html">Articles</a>
-                <a href="blog.html">Blog</a>
-                <a class="nav-cta" href="check.html">Start Check</a>
+                <a href="/resources.html">Resources</a>
+                <a href="/articles.html">Articles</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/medication.html">Medication</a>
+                <a class="nav-cta" href="/check.html">Start Check</a>
             </nav>
         </div>
     </header>
 
     <main class="section">
         <div class="container">
-            <h2>Mental Health Check</h2>
+            <h2>Maternal Health Risk Check</h2>
             <p class="sub">
-                This is a quick screening tool. It’s not a diagnosis — it helps you understand patterns and next steps.
+                Enter your health metrics to get a risk assessment. This is a screening tool — not a diagnosis.
             </p>
 
             <div class="grid-3">
@@ -33,91 +34,67 @@
                 <section class="card" style="grid-column: span 2;">
                     <div
                         style="display:flex; justify-content:space-between; gap:12px; align-items:center; flex-wrap:wrap;">
-                        <span class="pill" id="stepPill">Step 1 of 2</span>
+                        <span class="pill">Health Metrics</span>
                         <span class="pill">Private • No sign-up</span>
                     </div>
 
-                    <!-- Step 1 -->
-                    <div id="step1" style="margin-top:14px">
-                        <h3 style="margin: 10px 0 8px;">How have you been feeling recently?</h3>
+                    <form id="riskForm" style="margin-top:14px">
+                        <h3 style="margin: 10px 0 8px;">Enter your health data</h3>
 
                         <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:12px;">
                             <label>
-                                <div class="pill">Stress level (0–10)</div>
-                                <input class="input" type="number" min="0" max="10" value="5" id="stress" />
+                                <div class="pill">Age (years)</div>
+                                <input class="input" type="number" min="10" max="60" value="25" id="Age" name="Age"
+                                    required />
                             </label>
                             <label>
-                                <div class="pill">Sleep hours (0–12)</div>
-                                <input class="input" type="number" min="0" max="12" value="7" id="sleep" />
+                                <div class="pill">Systolic BP (mmHg)</div>
+                                <input class="input" type="number" min="70" max="200" value="120" id="SystolicBP"
+                                    name="SystolicBP" required />
                             </label>
                             <label>
-                                <div class="pill">Anxiety (0–10)</div>
-                                <input class="input" type="number" min="0" max="10" value="4" id="anxiety" />
+                                <div class="pill">Diastolic BP (mmHg)</div>
+                                <input class="input" type="number" min="40" max="140" value="80" id="DiastolicBP"
+                                    name="DiastolicBP" required />
                             </label>
                             <label>
-                                <div class="pill">Mood (0–10)</div>
-                                <input class="input" type="number" min="0" max="10" value="6" id="mood" />
+                                <div class="pill">Blood Sugar (mmol/L)</div>
+                                <input class="input" type="number" min="3" max="30" step="0.1" value="7.0" id="BS"
+                                    name="BS" required />
                             </label>
-                        </div>
-
-                        <div style="margin-top:12px;">
-                            <div class="pill">Any of these apply?</div>
-                            <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
-                                <label class="tag"><input type="checkbox" id="panic" /> Panic attacks</label>
-                                <label class="tag"><input type="checkbox" id="burnout" /> Burnout</label>
-                                <label class="tag"><input type="checkbox" id="isolation" /> Social withdrawal</label>
-                                <label class="tag"><input type="checkbox" id="appetite" /> Appetite change</label>
-                            </div>
+                            <label>
+                                <div class="pill">Body Temperature (°F)</div>
+                                <input class="input" type="number" min="95" max="105" step="0.1" value="98.6"
+                                    id="BodyTemp" name="BodyTemp" required />
+                            </label>
+                            <label>
+                                <div class="pill">Heart Rate (bpm)</div>
+                                <input class="input" type="number" min="40" max="200" value="76" id="HeartRate"
+                                    name="HeartRate" required />
+                            </label>
                         </div>
 
                         <div class="hero-actions" style="margin-top:16px;">
-                            <button class="btn btn-primary" id="toStep2">Continue →</button>
-                            <a class="btn" href="resources.html">Need resources?</a>
-                        </div>
-                    </div>
-
-                    <!-- Step 2 -->
-                    <div id="step2" style="margin-top:14px; display:none;">
-                        <h3 style="margin: 10px 0 8px;">A bit more context</h3>
-
-                        <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:12px;">
-                            <label>
-                                <div class="pill">Age</div>
-                                <input class="input" type="number" min="10" max="100" value="22" id="age" />
-                            </label>
-                            <label>
-                                <div class="pill">Daily screen time (hours)</div>
-                                <input class="input" type="number" min="0" max="18" value="6" id="screen" />
-                            </label>
+                            <button type="submit" class="btn btn-primary" id="predictBtn">Get Risk Assessment →</button>
+                            <a class="btn" href="/resources.html">Need resources?</a>
                         </div>
 
-                        <label style="display:block; margin-top:12px;">
-                            <div class="pill">Main concern (optional)</div>
-                            <input class="input" type="text" id="concern"
-                                placeholder="e.g., racing thoughts, low energy, stress" />
-                        </label>
-
-                        <div class="hero-actions" style="margin-top:16px;">
-                            <button class="btn" id="backTo1">← Back</button>
-                            <button class="btn btn-primary" id="getResult">Get Summary</button>
-                        </div>
-
-                        <div class="small">If you feel unsafe or in danger, go to the Resources page for emergency
-                            options.</div>
-                    </div>
+                        <div class="small" style="margin-top:10px;">If you feel unsafe or in danger, go to the Resources
+                            page for emergency options.</div>
+                    </form>
                 </section>
 
                 <!-- RIGHT: Results -->
                 <aside class="card">
-                    <span class="pill">Your Summary</span>
+                    <span class="pill">Your Risk Assessment</span>
                     <h3 style="margin: 10px 0 6px;" id="resultTitle">Complete the check</h3>
                     <p id="resultText" style="color: var(--muted); margin: 0 0 12px;">
-                        Answer the questions on the left to see a helpful summary and suggestions.
+                        Enter your health metrics and click "Get Risk Assessment" to see results.
                     </p>
 
                     <div id="resultBox" class="metric" style="display:none;">
-                        <div class="val" id="level">—</div>
-                        <div class="lbl" id="note">—</div>
+                        <div class="val" id="riskLevel">—</div>
+                        <div class="lbl" id="riskNote">Maternal Risk Level</div>
                     </div>
 
                     <div style="margin-top:14px;">
@@ -130,14 +107,82 @@
                     </div>
 
                     <div style="margin-top:16px;">
-                        <a class="btn" href="articles.html">Read helpful articles →</a>
+                        <a class="btn" href="/articles.html">Read helpful articles →</a>
                     </div>
                 </aside>
             </div>
         </div>
     </main>
 
-    <script src="assets/js/main.js"></script>
+    <footer class="footer">
+        <div class="container">
+            <div class="footbar">
+                <span>© 2026 Maternal Health. All rights reserved.</span>
+                <span>Not medical advice.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('riskForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const data = {
+                Age: parseFloat(document.getElementById('Age').value),
+                SystolicBP: parseFloat(document.getElementById('SystolicBP').value),
+                DiastolicBP: parseFloat(document.getElementById('DiastolicBP').value),
+                BS: parseFloat(document.getElementById('BS').value),
+                BodyTemp: parseFloat(document.getElementById('BodyTemp').value),
+                HeartRate: parseFloat(document.getElementById('HeartRate').value)
+            };
+
+            try {
+                const response = await fetch('/api/predict', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(data)
+                });
+
+                if (!response.ok) {
+                    const err = await response.json();
+                    throw new Error(err.detail || 'Prediction failed');
+                }
+
+                const result = await response.json();
+                showResult(result.risk_level);
+            } catch (error) {
+                alert('Error: ' + error.message);
+            }
+        });
+
+        function showResult(level) {
+            document.getElementById('resultTitle').textContent = 'Your Result';
+            document.getElementById('resultBox').style.display = 'block';
+            document.getElementById('riskLevel').textContent = level;
+
+            const stepA = document.getElementById('stepA');
+            const stepB = document.getElementById('stepB');
+            const stepC = document.getElementById('stepC');
+            const resultText = document.getElementById('resultText');
+
+            if (level === 'Low') {
+                resultText.textContent = 'Your metrics indicate low risk. Continue regular checkups.';
+                stepA.textContent = 'Maintain a healthy diet and regular exercise.';
+                stepB.textContent = 'Continue regular prenatal checkups.';
+                stepC.textContent = 'Monitor for any changes in symptoms.';
+            } else if (level === 'Mid') {
+                resultText.textContent = 'Your metrics indicate moderate risk. Consult with your healthcare provider.';
+                stepA.textContent = 'Schedule a follow-up appointment with your doctor.';
+                stepB.textContent = 'Monitor blood pressure and blood sugar regularly.';
+                stepC.textContent = 'Discuss lifestyle changes with your healthcare provider.';
+            } else {
+                resultText.textContent = 'Your metrics indicate high risk. Please seek medical attention promptly.';
+                stepA.textContent = 'Contact your healthcare provider immediately.';
+                stepB.textContent = 'Closely monitor all vital signs.';
+                stepC.textContent = 'Follow medical advice and treatment plans strictly.';
+            }
+        }
+    </script>
 </body>
 
 </html>

@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Pregnancy Medication Safety</title>
+    <link rel="stylesheet" href="/assets/css/styles.css" />
+</head>
+
+<body>
+    <header class="nav">
+        <div class="container nav-inner">
+            <a class="brand" href="/"><img src="/assets/img/logo.svg" alt="Maternal Health AI"
+                    class="brand-logo" /><span>Maternal Health</span></a>
+            <nav class="nav-links">
+                <a href="/resources.html">Resources</a>
+                <a href="/articles.html">Articles</a>
+                <a href="/blog.html">Blog</a>
+                <a href="/medication.html">Medication</a>
+                <a class="nav-cta" href="/check.html">Start Check</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="container">
+            <h2>Pregnancy Medication Safety</h2>
+            <p class="sub">
+                Understanding medication safety during pregnancy. Always consult your healthcare provider before taking
+                any medication.
+            </p>
+
+            <div class="grid-3">
+                <div class="card">
+                    <span class="pill">⚠️ Important</span>
+                    <h3>Not medical advice</h3>
+                    <p>This page provides general information only. Never start or stop medications without consulting
+                        your doctor.</p>
+                </div>
+                <div class="card">
+                    <span class="pill">🤰 Pregnancy</span>
+                    <h3>Special considerations</h3>
+                    <p>Many medications cross the placenta. What's safe normally may not be safe during pregnancy.</p>
+                </div>
+                <div class="card">
+                    <span class="pill">👩‍⚕️ Consult</span>
+                    <h3>Talk to your provider</h3>
+                    <p>Your healthcare provider can weigh risks vs benefits for your specific situation.</p>
+                </div>
+            </div>
+
+            <hr class="sep" />
+
+            <h2>Common Medications & Pregnancy</h2>
+            <p class="sub">General safety categories — always verify with your doctor.</p>
+
+            <div class="grid-3">
+                <div class="card">
+                    <span class="pill" style="background: rgba(34, 197, 94, 0.2); color: #22c55e;">Generally Safe</span>
+                    <h3>Low Risk</h3>
+                    <ul style="color: var(--muted); margin: 10px 0 0; padding-left: 18px;">
+                        <li>Acetaminophen (Tylenol)</li>
+                        <li>Prenatal vitamins</li>
+                        <li>Folic acid</li>
+                        <li>Iron supplements</li>
+                        <li>Certain antacids</li>
+                    </ul>
+                    <p class="small" style="margin-top:10px;">Always use as directed and consult your provider.</p>
+                </div>
+                <div class="card">
+                    <span class="pill" style="background: rgba(251, 191, 36, 0.2); color: #fbbf24;">Use With
+                        Caution</span>
+                    <h3>Moderate Risk</h3>
+                    <ul style="color: var(--muted); margin: 10px 0 0; padding-left: 18px;">
+                        <li>Some antihistamines</li>
+                        <li>Certain antibiotics</li>
+                        <li>Some blood pressure meds</li>
+                        <li>Certain anti-nausea drugs</li>
+                        <li>Some topical treatments</li>
+                    </ul>
+                    <p class="small" style="margin-top:10px;">Requires provider evaluation for your situation.</p>
+                </div>
+                <div class="card">
+                    <span class="pill" style="background: rgba(239, 68, 68, 0.2); color: #ef4444;">Avoid</span>
+                    <h3>High Risk</h3>
+                    <ul style="color: var(--muted); margin: 10px 0 0; padding-left: 18px;">
+                        <li>NSAIDs (Ibuprofen, Aspirin)</li>
+                        <li>Certain acne medications</li>
+                        <li>Some seizure medications</li>
+                        <li>Certain blood thinners</li>
+                        <li>Some herbal supplements</li>
+                    </ul>
+                    <p class="small" style="margin-top:10px;">Generally contraindicated during pregnancy.</p>
+                </div>
+            </div>
+
+            <hr class="sep" />
+
+            <section class="card">
+                <span class="pill">🔍 Medication Lookup</span>
+                <h3>Check medication safety</h3>
+                <p style="color:var(--muted); margin-top:6px;">
+                    Search for information about specific medications during pregnancy.
+                </p>
+
+                <div style="display:grid; grid-template-columns: 1fr 1fr; gap:12px; margin-top:14px;">
+                    <label>
+                        <div class="pill">Medication name</div>
+                        <input class="input" id="medName" placeholder="e.g., Acetaminophen" />
+                    </label>
+                    <label>
+                        <div class="pill">Trimester</div>
+                        <select class="input" id="trimester">
+                            <option value="">Select trimester</option>
+                            <option value="1">First trimester</option>
+                            <option value="2">Second trimester</option>
+                            <option value="3">Third trimester</option>
+                        </select>
+                    </label>
+                </div>
+
+                <div id="searchResult"
+                    style="display:none; margin-top:14px; padding:14px; background:var(--panel); border-radius:12px;">
+                    <h4 style="margin:0 0 8px;" id="resultMedName">—</h4>
+                    <p style="color:var(--muted); margin:0;" id="resultInfo">—</p>
+                </div>
+
+                <div class="hero-actions" style="margin-top:14px;">
+                    <button class="btn btn-primary" onclick="searchMedication()">Search</button>
+                    <a class="btn" href="/resources.html">Safety resources</a>
+                </div>
+
+                <p class="small" style="margin-top:10px;">
+                    ⚠️ This is for informational purposes only. Always consult your healthcare provider.
+                </p>
+            </section>
+
+            <hr class="sep" />
+
+            <div class="grid-3">
+                <div class="card" style="grid-column: span 2;">
+                    <span class="pill">📋 Tips</span>
+                    <h3>Before taking any medication</h3>
+                    <ul style="color: var(--muted); margin: 10px 0 0; padding-left: 18px;">
+                        <li>Tell your doctor about all medications you're taking, including OTC and supplements</li>
+                        <li>Ask about the FDA pregnancy category for any new medication</li>
+                        <li>Never stop prescribed medication without consulting your doctor first</li>
+                        <li>Keep a list of all medications to share with your healthcare team</li>
+                        <li>Report any side effects immediately to your provider</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <span class="pill">📞 Need Help?</span>
+                    <h3>Contact your provider</h3>
+                    <p style="color:var(--muted);">If you have questions about medication safety, contact your:</p>
+                    <ul style="color: var(--muted); margin: 10px 0 0; padding-left: 18px;">
+                        <li>OB-GYN</li>
+                        <li>Midwife</li>
+                        <li>Pharmacist</li>
+                        <li>Primary care doctor</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footbar">
+                <span>© 2026 Maternal Health. All rights reserved.</span>
+                <span>Not medical advice.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const medicationData = {
+            'acetaminophen': { safe: true, info: 'Generally considered safe during pregnancy when used as directed. It is the preferred pain reliever during pregnancy.' },
+            'tylenol': { safe: true, info: 'Generally considered safe during pregnancy when used as directed. It is the preferred pain reliever during pregnancy.' },
+            'ibuprofen': { safe: false, info: 'NOT recommended during pregnancy, especially in the third trimester. Can affect fetal heart and kidney development.' },
+            'advil': { safe: false, info: 'NOT recommended during pregnancy, especially in the third trimester. Can affect fetal heart and kidney development.' },
+            'aspirin': { safe: false, info: 'Generally NOT recommended during pregnancy unless prescribed by your doctor for specific conditions.' },
+            'folic acid': { safe: true, info: 'Highly recommended before and during pregnancy. Helps prevent neural tube defects.' },
+            'prenatal vitamins': { safe: true, info: 'Recommended for all pregnant women. Contains essential nutrients for fetal development.' },
+            'iron': { safe: true, info: 'Often recommended during pregnancy to prevent anemia. Take as directed by your provider.' },
+            'methyldopa': { safe: true, info: 'One of the preferred blood pressure medications during pregnancy. Used to treat hypertension.' },
+            'labetalol': { safe: true, info: 'Commonly used to treat high blood pressure during pregnancy. Generally considered safe.' },
+            'metformin': { safe: null, info: 'May be used for gestational diabetes under medical supervision. Discuss with your provider.' }
+        };
+
+        function searchMedication() {
+            const name = document.getElementById('medName').value.trim().toLowerCase();
+            const resultDiv = document.getElementById('searchResult');
+            const resultName = document.getElementById('resultMedName');
+            const resultInfo = document.getElementById('resultInfo');
+
+            if (!name) {
+                alert('Please enter a medication name');
+                return;
+            }
+
+            const med = medicationData[name];
+            resultDiv.style.display = 'block';
+
+            if (med) {
+                resultName.textContent = document.getElementById('medName').value;
+                resultInfo.textContent = med.info;
+                resultDiv.style.borderLeft = med.safe === true ? '4px solid #22c55e' :
+                    med.safe === false ? '4px solid #ef4444' : '4px solid #fbbf24';
+            } else {
+                resultName.textContent = document.getElementById('medName').value;
+                resultInfo.textContent = 'Information not found in our database. Please consult your healthcare provider for guidance on this medication.';
+                resultDiv.style.borderLeft = '4px solid var(--muted)';
+            }
+        }
+
+        // Allow Enter key to search
+        document.getElementById('medName').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') {
+                e.preventDefault();
+                searchMedication();
+            }
+        });
+    </script>
+</body>
+
+</html>

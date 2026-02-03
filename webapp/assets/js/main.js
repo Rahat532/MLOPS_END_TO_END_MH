@@ -102,8 +102,8 @@
     async function loadCountsAndFeatured() {
         try {
             const [articles, blogs] = await Promise.all([
-                fetch("assets/data/articles.json").then(r => r.json()),
-                fetch("assets/data/blogs.json").then(r => r.json())
+                fetch("/assets/data/articles.json").then(r => r.json()),
+                fetch("/assets/data/blogs.json").then(r => r.json())
             ]);
 
             const aCount = document.getElementById("articleCount");

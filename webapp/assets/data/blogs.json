@@ -1,20 +1,38 @@
 [
     {
-        "title": "What burnout felt like for me",
-        "excerpt": "A personal story and the changes that helped.",
-        "tag": "Burnout",
-        "url": "blog.html"
+        "title": "My pregnancy journey with high blood pressure",
+        "excerpt": "How I managed hypertension during pregnancy and stayed healthy.",
+        "tag": "Blood Pressure",
+        "url": "/blog.html"
     },
     {
-        "title": "My 7-day reset plan",
-        "excerpt": "A simple weekly plan to reduce overwhelm.",
+        "title": "Understanding gestational diabetes",
+        "excerpt": "What I learned about blood sugar management during pregnancy.",
+        "tag": "Blood Sugar",
+        "url": "/blog.html"
+    },
+    {
+        "title": "Prenatal checkups: What to expect",
+        "excerpt": "A guide to regular health monitoring during pregnancy.",
+        "tag": "Prenatal Care",
+        "url": "/blog.html"
+    },
+    {
+        "title": "Nutrition tips for a healthy pregnancy",
+        "excerpt": "Simple dietary changes that made a difference for me.",
+        "tag": "Nutrition",
+        "url": "/blog.html"
+    },
+    {
+        "title": "When to call your doctor",
+        "excerpt": "Warning signs that require immediate medical attention.",
+        "tag": "Safety",
+        "url": "/blog.html"
+    },
+    {
+        "title": "Managing stress during pregnancy",
+        "excerpt": "Techniques that helped me stay calm and healthy.",
         "tag": "Wellness",
-        "url": "blog.html"
-    },
-    {
-        "title": "How I learned to ask for help",
-        "excerpt": "Making support easier — without shame.",
-        "tag": "Support",
-        "url": "blog.html"
+        "url": "/blog.html"
     }
 ]

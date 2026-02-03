@@ -1,20 +1,38 @@
 [
     {
-        "title": "How stress affects your body and mind",
-        "excerpt": "A simple explanation of stress signals and what you can do today.",
-        "tag": "Stress",
-        "url": "articles.html"
+        "title": "Understanding blood pressure during pregnancy",
+        "excerpt": "What your BP numbers mean and when to be concerned.",
+        "tag": "Blood Pressure",
+        "url": "/articles.html"
     },
     {
-        "title": "Better sleep: small habits that actually work",
-        "excerpt": "Wind-down routines, caffeine timing, and screen habits.",
-        "tag": "Sleep",
-        "url": "articles.html"
+        "title": "Blood sugar levels: A complete guide",
+        "excerpt": "Normal ranges, testing, and managing gestational diabetes.",
+        "tag": "Blood Sugar",
+        "url": "/articles.html"
     },
     {
-        "title": "Anxiety basics: what it is and why it happens",
-        "excerpt": "Understand the pattern and learn calming techniques.",
-        "tag": "Anxiety",
-        "url": "articles.html"
+        "title": "Heart rate changes in pregnancy",
+        "excerpt": "Why your heart rate increases and what's normal.",
+        "tag": "Heart Health",
+        "url": "/articles.html"
+    },
+    {
+        "title": "Body temperature and pregnancy",
+        "excerpt": "Monitoring fever and staying safe during pregnancy.",
+        "tag": "Temperature",
+        "url": "/articles.html"
+    },
+    {
+        "title": "Risk factors for maternal health complications",
+        "excerpt": "Age, history, and other factors that affect pregnancy risk.",
+        "tag": "Risk Factors",
+        "url": "/articles.html"
+    },
+    {
+        "title": "When to seek emergency care",
+        "excerpt": "Critical warning signs every pregnant person should know.",
+        "tag": "Emergency",
+        "url": "/articles.html"
     }
 ]

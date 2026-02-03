@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" fill="none" role="img" aria-label="Maternal Health AI logo">
+  <!-- Palette: Violet #6D28D9 | Sky Blue #38BDF8 | White #FFFFFF -->
+
+  <!-- Outer rounded badge -->
+  <path
+    d="M132 72H380
+       C414 72 440 98 440 132V380
+       C440 414 414 440 380 440H132
+       C98 440 72 414 72 380V132
+       C72 98 98 72 132 72Z"
+    stroke="#6D28D9"
+    stroke-width="18"
+    stroke-linejoin="round"
+    fill="none"
+  />
+
+  <!-- AI tag (sky blue) -->
+  <g>
+    <rect x="352" y="92" width="88" height="46" rx="23" fill="#38BDF8"/>
+    <text
+      x="396" y="124"
+      text-anchor="middle"
+      font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
+      font-size="22"
+      font-weight="800"
+      letter-spacing="0.8"
+      fill="#0B1220">
+      AI
+    </text>
+  </g>
+
+  <!-- Icon (brain + chat + support + predictive hint) -->
+  <g transform="translate(96,118)">
+    <!-- Chat bubble -->
+    <path
+      d="M164 22
+         C222 22 266 62 266 114
+         C266 166 222 206 164 206
+         H118
+         L88 234
+         V206
+         C52 192 28 158 28 114
+         C28 62 72 22 130 22
+         Z"
+      stroke="#6D28D9"
+      stroke-width="14"
+      stroke-linejoin="round"
+      stroke-linecap="round"
+      fill="none"
+    />
+
+    <!-- Brain outline -->
+    <path
+      d="M122 72
+         C104 72 90 86 90 104
+         C90 121 101 134 118 140
+         C118 160 136 176 156 176
+         C170 176 182 168 188 156
+         C196 168 209 176 224 176
+         C246 176 264 159 264 136
+         C264 118 252 104 234 98
+         C231 80 214 66 194 66
+         C180 66 168 72 160 84
+         C152 76 138 72 122 72
+         Z"
+      stroke="#6D28D9"
+      stroke-width="12"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+
+    <!-- Heart (support) -->
+    <path
+      d="M192 124
+         C192 113 201 104 212 104
+         C220 104 227 109 230 117
+         C233 109 240 104 248 104
+         C259 104 268 113 268 124
+         C268 144 245 160 230 174
+         C215 160 192 144 192 124
+         Z"
+      fill="#38BDF8"
+    />
+
+    <!-- Predictive/AI hint: clean "trend" line (sky blue) -->
+    <path
+      d="M86 166
+         L112 146
+         L134 156
+         L160 132
+         L186 144"
+      stroke="#38BDF8"
+      stroke-width="12"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      fill="none"
+    />
+  </g>
+
+  <!-- Wordmark inside badge (white) -->
+  <text
+    x="256" y="438"
+    text-anchor="middle"
+    font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial"
+    font-size="34"
+    font-weight="750"
+    letter-spacing="-0.3"
+    fill="#FFFFFF">
+    Maternal Health
+  </text>
+</svg>
